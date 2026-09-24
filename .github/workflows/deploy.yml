@@ -282,6 +282,9 @@ jobs:
             retention=0
           fi
           source $HOME/.bashrc
+          export NVM_DIR="$HOME/.nvm"
+          . "$NVM_DIR/nvm.sh"
+          nvm use 24
           workdir="$basedir/build_${{ github.run_number }}_$(date +%Y%m%d_%H%M%S)"
           mkdir -p "$workdir" "$basedir/.cache"
           mv /tmp/yohaku/release.zip "$workdir/release.zip"
